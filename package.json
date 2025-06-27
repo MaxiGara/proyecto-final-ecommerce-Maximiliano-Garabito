@@ -1,9 +1,11 @@
 {
-  "name": "api",
+  "name": "api-rest",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -11,13 +13,10 @@
   },
   "author": "Maximiliano Garabito",
   "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/MaxiGara/proyecto-final-ecommerce-Maximiliano-Garabito/issues"
   },
   "homepage": "https://github.com/MaxiGara/proyecto-final-ecommerce-Maximiliano-Garabito#readme",
-  "description": "",
-  "dependencies": {
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10"
-  }
+  "description": "API Rest en Node.js"
 }
