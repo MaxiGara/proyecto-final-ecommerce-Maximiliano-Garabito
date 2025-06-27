@@ -18,5 +18,9 @@
     "url": "https://github.com/MaxiGara/proyecto-final-ecommerce-Maximiliano-Garabito/issues"
   },
   "homepage": "https://github.com/MaxiGara/proyecto-final-ecommerce-Maximiliano-Garabito#readme",
-  "description": "API Rest en Node.js"
+  "description": "API Rest en Node.js",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
 }
