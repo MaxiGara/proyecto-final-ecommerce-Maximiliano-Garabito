@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Ranitidina",
+        "description": "Protector gastrico",
+        "precio": 200 
+    },
+    {
+        "id": 2,
+        "name": "Omeprazol",
+        "description": "Inhibidor de la bomba de protones",
+        "precio": 150
+    },
+    {
+        "id": 3,
+        "name": "Ibuprofeno",
+        "description": "Antiinflamatorio no esteroideo",
+        "precio": 100
+    },
+    {
+        "id": 4,
+        "name": "Dexametasona",
+        "description": "Analgesico y antipiretico",
+        "precio": 80
+    },
+    {
+        "id": 5,
+        "name": "Amoxicilina",
+        "description": "Antibiotico de amplio espectro",
+        "precio": 120
+    }
+]

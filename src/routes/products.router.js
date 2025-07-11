@@ -9,6 +9,7 @@ const products = [
 ]
 
 import { getAllProducts, searchProduct, getProductID } from "../controllers/products.controller.js";
+import { deleteProduct } from "../models/products.model.js";
 
 
 export default router;
@@ -34,20 +35,10 @@ router.put("/products/:id", (req, res) => {
         return res.status(404).json({ error: "Producto no encontrado" });
     }
 
-    const { nombre, precio } = req.body;
+    const { name, precio } = req.body;
 
-    products [productIndex] = { ...products[productIndex], nombre, precio };
+    products [productIndex] = { ...products[productIndex], name, precio };
     res.json(products[productIndex]);
 });
 
-router.delete("/products/:id", (req, res) => {
-    const productId = parseInt(req.params.id, 10);
-    const productIndex = products.findIndex((p) => p.id === productId);
-
-        if (productIndex === -1) {
-        return res.status(404).json({ error: "No existe el producto" });
-    }
-
-    products.splice(productIndex, 1)
-    res.json({ message: "Producto eliminado" });
-})
+router.delete("/products/:id", deleteProduct);
