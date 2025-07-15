@@ -64,7 +64,7 @@ export async function updateProduct(id, productData) {
       return false;
     }
 
-    await setDoc(productRef, productData); // reemplazo completo
+    await setDoc(productRef, productData);
     return { id, ...productData };
   } catch (error) {
     console.error(error);
