@@ -1,18 +1,5 @@
-import fs from 'fs';
-import path from "path";
-
-const __dirname = import.meta.dirname;
-
-const jsonPath = path.join(__dirname, "./products.json");
-
-const json = fs.readFileSync(jsonPath, "utf-8");
-
-const products = JSON.parse(json);
-
-// console.log(products);
-
 import { db } from "./data.js";
-import { collection, doc, getDocs, addDoc, getDoc, deleteDoc, setDoc } from "firebase/firestore";
+import { collection, doc, getDocs, addDoc, getDoc, deleteDoc, setDoc, updateDoc } from "firebase/firestore";
 
 const productsCollection = collection(db, "products");
 
@@ -35,7 +22,7 @@ export const searchProduct = async (req, res) => {
     }
 };
 
-export const getAllProductsByID = async (id) => {
+export const getProductByID = async (id) => {
     try {
         const productRef = doc(productsCollection, id);
         const snapshot = await getDoc(productRef);
@@ -51,7 +38,8 @@ export const createProduct = async (data) => {
         const docRef = await addDoc(productsCollection, data);
         return { id: docRef.id, ...data };
     } catch (error) {
-        console.error(error)
+        console.error("Error en el modelo al crear producto", error)
+        throw error;
     }
 };
 
@@ -71,15 +59,37 @@ export async function updateProduct(id, productData) {
   }
 };
 
-export const deleteProduct = async (id) => {
+export const patchProduct = async (id, productData) => {
+    console.log("Tipo de producto: ", typeof id, id)
     try {
-        const producRef = doc(productsCollection, id);
-        const snapshot = await getDoc(producRef);
+        const productRef = doc(productsCollection, id);
+        const snapshot = await getDoc(productRef);
 
         if (!snapshot.exists()) {
             return false;
         }
-        await deleteDoc(producRef);
+
+        await updateDoc(productRef, productData);
+        return { id, ...snapshot.data(), ...productData };
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+};
+
+export const deleteProduct = async (id) => {
+    try {
+        if (typeof id !== 'string') {
+            throw new Error("ID debe ser un string en deleteProduct");
+        }
+        
+        const productRef = doc(productsCollection, id);
+        const snapshot = await getDoc(productRef);
+
+        if (!snapshot.exists()) {
+            return false;
+        }
+        await deleteDoc(productRef);
         return true;
     } catch (error) {
         console.error(error);

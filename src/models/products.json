@@ -2,61 +2,71 @@
     {
         "id": 1,
         "nombre": "Ranitidina",
-        "descripcion": "Protector gastrico, en comprimidos",
+        "descripcion": "Protector gastrico",
+        "presentacion": ["Comprimidos", "inyectable"],
         "precio": 200 
     },
     {
         "id": 2,
         "nombre": "Omeprazol",
-        "descripcion": "Protector gastrico, en comprimidos",
+        "descripcion": "Protector gastrico",
+        "presentacion": "Comprimidos",
         "precio": 150
     },
     {
         "id": 3,
         "nombre": "Cefalexina",
-        "descripcion": "Antibiotico de amplio espectro, en comprimidos",
+        "descripcion": "Antibiotico de amplio espectro",
+        "presentacion": ["Comprimidos", "Jarabe"],
         "precio": 100
     },
     {
         "id": 4,
         "nombre": "Dexametasona",
-        "descripcion": "Analgesico, antipiretico, antiinflamatorio, inyectable",
+        "descripcion": "Analgesico, antipiretico, antiinflamatorio",
+        "presentacion": ["Comprimidos", "Inyectable"],
         "precio": 80
     },
     {
         "id": 5,
         "nombre": "Amoxicilina",
-        "descripcion": "Antibiotico de amplio espectro, en comprimidos",
+        "descripcion": "Antibiotico de amplio espectro",
+        "presentacion": ["Comprimidos", "Jarabe"],
         "precio": 120
     },
     {
         "id": 6,
         "nombre": "Aprax",
-        "descripcion": "Antiparasitario, en jarabe",
+        "descripcion": "Antiparasitario interno",
+        "presentacion": "Jarabe",
         "precio": 50
     },
     {
         "id": 7,
         "nombre": "Diazepam",
         "descripcion": "Anticonvulsivo, relajante muscular",
+        "presentacion": ["Comprimidos", "Inyectable"],
         "precio": 90
     },
     {
         "id": 8,
         "nombre": "Vacuna quintuple",
         "descripcion": "Vacuna multivalente para perros",
+        "presentacion": "Inyectable",
         "precio": 110
     },
     {
         "id": 9,
         "nombre": "Vacuna triple felina",
         "descripcion": "Vacuna multivalente para gatos",
+        "presentacion": "Inyectable",
         "precio": 130
     },
     {
         "id": 10,
         "nombre": "Vacuna rabia",
         "descripcion": "Vacuna anti-rabica para perros y gatos",
+        "presentacion": "Inyectable",    
         "precio": 70
     }
 ]
